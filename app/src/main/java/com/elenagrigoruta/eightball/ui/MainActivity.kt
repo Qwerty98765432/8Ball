@@ -1,4 +1,4 @@
-package com.elenagrigoruta.eightball
+package com.elenagrigoruta.eightball.ui
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -14,6 +14,7 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import kotlinx.coroutines.delay
@@ -44,18 +45,22 @@ fun MainScreen() {
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(10.dp),
-            horizontalArrangement = Arrangement.SpaceBetween
+            horizontalArrangement = Arrangement.SpaceAround
         ) {
             Text(
                 text = "Points: $points",
-                fontSize = 18.sp,
+                fontSize = 15.sp,
                 fontWeight = FontWeight.Bold
             )
-            Button(onClick = {
+            Button(
+                onClick = {
                 isTimerRunning = !isTimerRunning
                 points = 0
             }) {
-                Text(text = if(isTimerRunning) "Reset" else "Start")
+                Text(fontSize = 15.sp,
+                    fontWeight = FontWeight.Bold,
+                    textAlign = TextAlign.Center,
+                    text = if(isTimerRunning) "Reset" else "Start")
             }
             CountdownTimer(
                 isTimerRunning = isTimerRunning
@@ -94,7 +99,7 @@ fun CountdownTimer(
     }
     Text(
         text = (curTime / 1000).toString(),
-        fontSize = 20.sp,
+        fontSize = 15.sp,
         fontWeight = FontWeight.Bold
     )
 }
