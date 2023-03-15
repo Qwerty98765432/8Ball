@@ -48,7 +48,7 @@ fun MainScreen() {
         ) {
             Text(
                 text = "Points: $points",
-                fontSize = 20.sp,
+                fontSize = 18.sp,
                 fontWeight = FontWeight.Bold
             )
             Button(onClick = {
@@ -73,7 +73,7 @@ fun MainScreen() {
 
 @Composable
 fun CountdownTimer(
-    time: Int = 30000,
+    time: Int = 20000,
     isTimerRunning: Boolean = false,
     onTimerEnd: () -> Unit = {}
 ) {
@@ -101,9 +101,9 @@ fun CountdownTimer(
 
 @Composable
 fun BallClicker(
-    radius: Float = 100f,
+    radius: Float = 130f,
     enabled: Boolean = false,
-    ballColor: Color = Color.Red,
+    ballColor: Color = Color.Blue,
     onBallClick: () -> Unit = {}
 ) {
     BoxWithConstraints(modifier = Modifier.fillMaxSize()) {
